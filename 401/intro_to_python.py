@@ -67,11 +67,10 @@ def compute_bill(food):
   total = 0
   for item in food:
     if stock[item] > 0:
-      stock[item] = stock[item] - 1
       total += prices[item]
+      stock[item] -= 1
   return total
 
-print total
 
 # Becomes the Teacher
 
@@ -125,7 +124,8 @@ def get_class_average(class_list):
     results.append(get_average(student))
   return average(results)
 
-print get_class_average(students)
+print get_letter_grade(get_class_average(students))
+
 
 # Battleship
 
@@ -175,3 +175,5 @@ for turn in range(4):
       print "Game Over"
     else:
       print_board(board)
+
+
